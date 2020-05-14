@@ -10,4 +10,7 @@ import com.ladmin.sys.entity.SysPermission;
 public interface SysPermissionDao {
 	/** <!--权限列表 --> */
 	List<SysPermission> getSysPermissions();
+	/**
+	 * 
+	 */
 }
