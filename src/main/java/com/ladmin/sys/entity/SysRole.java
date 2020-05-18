@@ -7,12 +7,14 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
 
+
+/**
+ * @author 刘小刘
+ * 
+ */
 @Data
 public class SysRole  implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 491705610265331943L;
 
 	/**角色ID*/
@@ -28,7 +30,7 @@ public class SysRole  implements Serializable{
 	/**角色状态【 1 正常 0停用】*/
 	private String status;
 	/**删除标识 1删除 0存在*/
-	private String del_flag;
+	private String delFlag;
 	/**创建人*/
 	private String createBy;
 	 /** 创建时间 */
