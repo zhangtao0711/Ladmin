@@ -15,6 +15,8 @@ public class PageController {
 		  return "index";
 	  }
 
+
+
 	 @RequestMapping("doDeleteMember")
 	  public String doDeleteMember() {
 		  return "member-del";
@@ -23,5 +25,3 @@ public class PageController {
 	 public String doPageUI() {
 		 return"page";
 	 }
-
-}
