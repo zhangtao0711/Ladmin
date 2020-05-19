@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<!--zhangtao 会员删除  -->
+	<mapper namespace="com.ladmin.sys.dao.SysUserDao">
+	<sql id="queryWhere">
+		from sys_user_del 
+		<where>
+		<if test="username!=null and username!='' ">
+		username like concat("%",#{username},"%")
+		</if>
+		<if test="startTime!=null  and startTime !='' ">
+			开始时间检索
+			and date_format(user_joinTime,'%y%m%d')
+			&gt;=date_format(#{startTime},'%y%m%d')
+		</if>
+		<if test="endTime!=null  and endTime!='' ">
+			结束时间检索
+			and date_format(user_joinTime,'%y%m%d')
+			&lt;=date_format(#{endTime},'%y%m%d')
+		</if>		
+		</where>
+	</sql>
+	<resultMap type="com.ladmin.sys.entity.SysUser" id="SysUsers">
+	<id property="userid" column="user_id"/>
+	<result property="username" column="user_name"/>
+	<result property="usersex" column="user_sex"/>
+	<result property="userphone" column="user_phone"/>
+	<result property="useremail" column="user_email"/>
+	<result property="useraddress" column="user_address"/>
+	<result property="userjoinDate" column="user_joinTime"/>
+	</resultMap>
+	<!--分页查询数据  -->
+	<select id="findObjects"  resultMap="SysUsers">
+	select * <include refid="queryWhere"/>order by user_joinTime desc
+      limit #{startIndex},#{pageSize}
+	</select>
+	<!-- 查询总记录数 -->
+	<select id="getRowCount" resultType="int">
+	select count(*)<include refid="queryWhere"/>
+	</select>
+	</mapper>
