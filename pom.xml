@@ -68,12 +68,16 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
+<<<<<<< HEAD
 	<!--spring整合mybatis-plus -->
 		<!-- <dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus-boot-starter</artifactId>
 			<version>3.2.0</version>
 		</dependency> -->
+=======
+
+>>>>>>> 2eaf973f4968e64b6c2b45a070e523d4650c4760
 	</dependencies>
 
 	<build>

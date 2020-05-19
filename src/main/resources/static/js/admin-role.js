@@ -39,7 +39,11 @@ function loadErrors(message){
 	   tBody.append(tr);
 }
 function doSetTableBodyRows(data){
+<<<<<<< HEAD
 	   console.log(data);
+=======
+	   
+>>>>>>> 2eaf973f4968e64b6c2b45a070e523d4650c4760
 	  //获取tbody对象,并清空
 	   var tBody=$("#dataTbody");
 	   tBody.empty();

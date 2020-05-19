@@ -35,9 +35,12 @@ pagehelper:
   
   
 mybatis:
+<<<<<<< HEAD
   configuration:
     default-statement-timeout: 30
     map-underscore-to-camel-case: true
+=======
+>>>>>>> 2eaf973f4968e64b6c2b45a070e523d4650c4760
   mapper-locations:
   - classpath:/mapper/*/*.xml
   

@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ladmin.common.vo.response.QueryResponseResult;
+<<<<<<< HEAD
+=======
+import com.ladmin.sys.service.SysPermissionService;
+>>>>>>> 2eaf973f4968e64b6c2b45a070e523d4650c4760
 import com.ladmin.sys.service.SysRoleService;
 
 /**
@@ -21,6 +25,12 @@ public class SysRoleController {
 	@Autowired
 	private SysRoleService sysRoleService;
 	
+<<<<<<< HEAD
+=======
+	@Autowired
+	private SysPermissionService sysPermissionService;
+	
+>>>>>>> 2eaf973f4968e64b6c2b45a070e523d4650c4760
 	@GetMapping("/list")
 	public QueryResponseResult findList( int page,int size,String beginTime,String endTime,String name) {
 		
