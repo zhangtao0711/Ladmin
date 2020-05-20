@@ -1,20 +1,25 @@
 package com.ladmin.sys.dao;
 
+import java.nio.charset.Charset;
 import java.util.List;
-import org.apache.ibatis.annotations.Mapper;
-import com.ladmin.sys.entity.SysUser;
 
-/**
- * 会员管理:会员删除,会员恢复
- * zt
- * */
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+
+import com.ladmin.sys.entity.SysUser;
 
 @Mapper
 public interface SysUserDao {
-	/**
-	 * 根据分页信息查询
-	 * */
-	List<SysUser>findObjects(String username,Integer startIndex,Integer pageSize,String startTime,String endTime);
-	//查询总记录
-	int getRowCount(String username);
+//@Select("select count(*) from sys_user where user_name=#{username}")
+//	int getRowCounts(@Param("username")String username);
+	int getRowCounts(@Param("username")String username);
+	int getRowNum(String name);
+	List<SysUser> findPageObjects(String username,
+			Integer startIndex,Integer pageSize);
+	int insertObject(SysUser entity) ;
+	int updateObject(SysUser entity);
+	int updatePassword(@Param("password")Charset user_pwd,
+			            @Param("salt")String salt,
+			            @Param("id")Integer id);
 }

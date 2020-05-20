@@ -15,14 +15,13 @@ public class PageController {
 		  return "index";
 	  }
 
-
-
-	 @RequestMapping("doDeleteMember")
-	  public String doDeleteMember() {
-		  return "member-del";
-	  }
 	 @RequestMapping("doPageUI")
 	 public String doPageUI() {
 		 return"page";
 	 }
+	 @RequestMapping("member/member-del")
+		public String domember() {
+			return "html/member-del";
+		}
+	 
 }
