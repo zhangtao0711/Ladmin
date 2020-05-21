@@ -1,8 +1,7 @@
 package com.ladmin.sys.service;
 
-import java.util.List;
-
 import com.ladmin.common.vo.response.QueryResponseResult;
+import com.ladmin.common.vo.response.ResponseResult;
 import com.ladmin.sys.entity.SysRole;
 
 /**
@@ -18,25 +17,27 @@ public interface SysRoleService {
 	public QueryResponseResult findRoleListByUserId(String userId);
 	
 	/**根据RoleId 查找角色*/
-	public QueryResponseResult findRoleByRoleId(Long roleId);
+	public QueryResponseResult findRoleByRoleId(Integer roleId);
 	
 	/**根据roleId删除角色表*/
-	public int deleteRoleById(Long roleId);
+	public ResponseResult deleteRoleById(Integer roleId);
 	
 	/**根据roleId批量删除角色表*/
-	public int deleteRoleByIds(Long[] roleIds);
+	public ResponseResult deleteRoleByIds(Integer[] roleIds);
 	
 	/**新增一条信息*/
-	public int insertRole(SysRole role);
+	public ResponseResult insertRole(SysRole role,Integer... permissionIds);
 	
-	/**删除一条信息*/
-	public int updateRole(SysRole role);
+	/**更新一条信息*/
+	public ResponseResult updateRole(SysRole role,Integer... permissionIds);
 	
 	/**检查角色名是否存在*/
-	public int checkRoleNameExist(String roleName);
+	public QueryResponseResult checkRoleNameExist(String roleName);
 	
 	/**检查角色权限是否存在*/
-	public int checkRoleKeyExist(String RoleKey);
+	public QueryResponseResult checkRoleKeyExist(String RoleKey);
+	
+	public ResponseResult updateStatusById(Integer roleId,String status);
 
 	
 

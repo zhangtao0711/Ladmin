@@ -18,7 +18,7 @@ public class SysRole  implements Serializable{
 	private static final long serialVersionUID = 491705610265331943L;
 
 	/**角色ID*/
-	private Long roleId;
+	private Integer roleId;
 	/**角色名称*/
 	private String roleName;
 	/**角色权限字符串*/
