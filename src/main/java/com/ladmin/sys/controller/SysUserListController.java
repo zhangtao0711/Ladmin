@@ -29,6 +29,6 @@ public class SysUserListController {
 		System.out.println("list="+list);
 		model.addAttribute("list", list);
 		
-		return new JsonResult(sysUserListService.findObjects());
+		return null;
 	} 
 }
