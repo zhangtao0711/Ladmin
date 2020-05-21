@@ -2,10 +2,7 @@
 <!DOCTYPE mapper
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-<!-- createBy 刘小刘 -->
 <!-- createBy liuzx -->
-
 <mapper namespace="com.ladmin.sys.dao.SysRoleDao">
 
 	<resultMap type="com.ladmin.sys.entity.SysRole"
@@ -98,9 +95,7 @@
  			now()
  		)
 	</insert>
-	</mapper>
 	
-<<<<<<< HEAD
 	 <delete id="deleteRoleByIds">
    		delete from sys_role
    		<where>
@@ -119,5 +114,3 @@
    </delete>
 
 </mapper>
-=======
->>>>>>> ad6b4f3b25f5d7fff009062f9d68274d82930cf9
