@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ladmin.sys.dao.SysUserDao">
+	<sql id="query">
+		from sys_user
+		<where>
+			<if test="username !=null and username !=''">
+				user_name like CONCAT("%",#{username},"%")
+			</if> 
+		</where>
+<!-- 		where 1=2
+ -->	</sql>
+	
+	<select id="getRowCounts" resultType="int">
+		select count(*)
+		<include refid="query" ></include>
+	</select>
+	<select id="findPageObjects"
+		resultType="com.ladmin.sys.entity.SysUser">
+		select *
+		<include refid="query"></include>
+	</select>
+	<insert id="insertObject"
+		parameterType="com.ladmin.sys.entity.SysUser" useGeneratedKeys="true">
+		insert into sys_user
+		(user_id,user_name,user_sex,user_phone,user_email
+		,user_address,user_jointime,user_state,user_move)
+		values
+		(#{user_id},#{user_name},#{user_sex},#{user_phone},
+		#{user_email},#{user_address},now(),#{user_state},#{user_move})
+	</insert>
+	<update id="updateObject"
+		parameterType="com.ladmin.sys.dao.SysUserDao">
+		update sys_user
+		set user_name=#{user_name},
+		user_email=#{user_email},
+		user_pwd=#{user_pwd}
+		where id=#{id}
+	</update>
+	<update id="updatePassword">
+		update sys_user
+		set user_pwd=#{user_pwd}
+		salt=#{salt}
+		where id=#{id}
+	</update>
+	<resultMap type="com.ladmin.sys.entity.SysUser" id="SysUser"></resultMap>
+</mapper>

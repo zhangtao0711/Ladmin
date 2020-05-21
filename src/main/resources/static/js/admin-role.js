@@ -70,6 +70,7 @@ function loadErrors(message) {
 	// 将tr追加到tbody
 	tBody.append(tr);
 }
+<<<<<<< HEAD
 
 // 加载表格数据追加到tbody
 function doSetTableBodyRows(data) {
@@ -89,6 +90,28 @@ function doSetTableBodyRows(data) {
 		// 2.4将tr追加到tbody中
 		tBody.append(tr);
 	}
+=======
+function doSetTableBodyRows(data){
+
+	   console.log(data);
+	   
+	  //获取tbody对象,并清空
+	   var tBody=$("#dataTbody");
+	   tBody.empty();
+	   //2.迭代数据,并追加到tBody
+	
+	   for(var i=0;i<data.length;i++){
+		  //2.1构建tr对象
+		  var tr=$("<tr></tr>");
+		
+		  //2.2构建tds对象
+		  var tds=doCreateTds(data[i],i);
+		  //2.3将tds对象追加到tr中
+		  tr.append(tds);
+		  //2.4将tr追加到tbody中
+		  tBody.append(tr);
+	   }
+>>>>>>> ad6b4f3b25f5d7fff009062f9d68274d82930cf9
 }
 function doCreateTds(row, i) {
 	 var tds=
