@@ -33,7 +33,7 @@ public interface SysRoleDao {
 	public int deleteRoleById(Integer roleId);
 	
 	/**根据roleId批量删除角色表*/
-	public int deleteRoleByIds(Integer[] roleIds);
+	public int deleteRoleByIds(Integer... roleIds);
 	
 	/**新增一条信息*/
 	public int insertRole(SysRole role);

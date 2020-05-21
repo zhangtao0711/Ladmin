@@ -96,6 +96,21 @@
  		)
 	</insert>
 	
-	
+	 <delete id="deleteRoleByIds">
+   		delete from sys_role
+   		<where>
+   			<choose>
+	   			<when test="roleIds!=null and roleIds.length>0">
+	   				<foreach collection="roleIds" item="id" separator="or">
+	   					role_id=#{id}
+	   				</foreach>
+	   			</when>
+	   		<otherwise>
+   				1=2
+   			</otherwise>
+   			</choose>
+   		</where>
+   		
+   </delete>
 
 </mapper>

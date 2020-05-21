@@ -92,15 +92,15 @@ function doSetTableBodyRows(data) {
 }
 function doCreateTds(row, i) {
 	 var tds=
-		   "<td> <div class='layui-unselect header layui-form-checkbox' lay-skin='primary' data-id='2'><i class='layui-icon'>&#xe605;</i></div>   </td>"+
+		//   "<td> <div class='layui-unselect header layui-form-checkbox' lay-skin='primary' data-id='"+row.roleId+"'><i class='layui-icon'>&#xe605;</i></div>   </td>"+
   "<td>"+(parseInt(i)+1)+"</td>"+
 	   "<td>"+row.roleName+"</td>"+
   "<td>"+row.roleKey+"</td>"+
   "<td>"+row.remark+"</td>";
 	if (row.status == 0) {
-		tds += "<td ><span class='layui-btn layui-btn-normal layui-btn-mini'>已启用</span></td>";
+		tds += "<td  class='td-status'><span class='layui-btn layui-btn-normal layui-btn-mini'>已启用</span></td>";
 	} else {
-		tds += "<td ><span class='layui-btn layui-btn-normal layui-btn-mini layui-btn-disabled'>已停用</span></td>";
+		tds += "<td class='td-status'><span class='layui-btn layui-btn-normal layui-btn-mini layui-btn-disabled'>已停用</span></td>";
 	}
 
 	tds += "  <td class='td-manage'>  <a onclick = 'member_stop(this,"
