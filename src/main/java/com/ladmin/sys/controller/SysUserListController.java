@@ -24,12 +24,11 @@ public class SysUserListController {
 	private SysUserListService sysUserListService;
 	
 	@RequestMapping("/doFindActivitys")
-	public String doFindActivitys(Model model) {
+	public JsonResult doFindActivitys(Model model) {
 		List<SysUserList> list=sysUserListService.findObjects();
 		System.out.println("list="+list);
 		model.addAttribute("list", list);
-		//模拟耗时操作
 		
-		return null;
+		return new JsonResult(sysUserListService.findObjects());
 	} 
 }
