@@ -23,5 +23,15 @@ public class PageController {
 		public String domember() {
 			return "html/member-del";
 		}
+	 @RequestMapping("html/admin-list.html")
+	  public String adminList(Model model) {
+		  List<SysUserList> list=sysUserListService.findObjects();
+		  model.addAttribute("list",list);
+		  return "html/admin-list";
+	  }
+	  @RequestMapping("html/admin-add.html")
+	  public String adminAdd() {
+		  return "html/admin-add";
+	  }
 	 
 }
